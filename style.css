@@ -1,4 +1,4 @@
-/* RESET ET BASES */
+/* --- RESET & BASES --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,42 +6,31 @@
 }
 
 body {
-    /* Police principale du texte (identique au site Bakary) */
     font-family: 'Libre Franklin', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #fff;
+    background-color: #000;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* POLICE DES TITRES */
-h1, h2, h3, .footer-logo {
-    /* Police des titres (identique au site Bakary) */
+/* Conteneur principal pour centrer le contenu sur les très grands écrans (iMac etc.) */
+.container {
+    max-width: 1200px; /* Largeur standard PC */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* TYPOGRAPHIE */
+h1, h2, h3 {
     font-family: 'Philosopher', sans-serif;
     font-weight: 700;
 }
 
-/* --- LOGO HEADER --- */
-.logo-container {
-    position: absolute;
-    top: 25px; /* Un peu plus d'espace en haut */
-    left: 25px;
-    z-index: 10;
-}
-
-.my-logo {
-    /* AVANT: width: 60px; */
-    /* MAINTENANT : Beaucoup plus grand */
-    width: 150px; 
-    height: auto; /* Garde les proportions */
-    display: block;
-    /* Optionnel : Ajoute une petite ombre pour le faire ressortir du fond étoilé */
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-}
-
-/* --- SECTION 1 : HERO --- */
+/* --- 1. HEADER & NAVIGATION (VERSION PC) --- */
 .hero-section {
-    height: 90vh;
+    height: 100vh;
     background-color: #000;
+    /* Active cette ligne quand tu auras mis l'image stars.jpg */
     /* background-image: url('img/stars.jpg'); */
     background-size: cover;
     background-position: center;
@@ -50,235 +39,309 @@ h1, h2, h3, .footer-logo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     position: relative;
 }
 
-.main-title {
-    font-size: 2.8rem; /* Un peu plus grand pour Philosopher */
-    margin-bottom: 15px;
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px; /* Espace large pour PC */
+    display: flex;
+    justify-content: space-between; /* Logo à gauche, Menu à droite */
+    align-items: center;
+    z-index: 10;
+}
+
+.my-logo {
+    width: 80px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Espace entre les liens */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.main-title {
+    font-size: 4rem; /* Très gros sur PC */
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .subtitle {
-    font-family: 'Poppins', sans-serif; /* Police secondaire pour les sous-titres */
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.9;
+    font-family: 'Philosopher', sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
-/* --- SECTION 2 : WELCOME --- */
+/* --- 2. SECTION WELCOME (Split Layout PC) --- */
 .welcome-section {
-    padding: 4rem 1.5rem;
-    background-color: #f4f4f4;
+    background-color: white;
+    padding: 100px 0; /* Beaucoup d'espace vertical */
 }
 
-.profile-image-container img {
+/* Layout PC : Flexbox pour mettre côte à côte */
+.split-layout {
+    display: flex;
+    align-items: center; /* Centré verticalement */
+    justify-content: space-between;
+    gap: 60px; /* Espace entre photo et texte */
+}
+
+.col-left {
+    width: 45%;
+}
+
+.col-right {
+    width: 50%;
+}
+
+.profile-img {
     width: 100%;
-    max-width: 400px;
     height: auto;
-    display: block;
-    margin: 0 auto 2rem auto;
     filter: grayscale(100%);
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.05); /* Petit effet de style */
 }
 
 .welcome-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
 }
 
 .welcome-text p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
     color: #555;
-    /* Libre Franklin est très lisible, on peut le garder simple */
 }
 
 .btn-pink {
     display: inline-block;
     background-color: #D60057;
     color: white;
-    padding: 14px 35px;
+    padding: 15px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    margin-top: 20px;
     transition: background 0.3s;
 }
 .btn-pink:hover {
     background-color: #b00048;
 }
 
-/* --- SECTION 3 : GALERIE --- */
+/* --- 3. GALERIE (3 Colonnes sur PC) --- */
 .gallery-section {
-    padding: 10px;
-    background: white;
+    background-color: white;
+    padding-bottom: 100px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colonnes égales */
+    gap: 20px;
 }
 
 .grid-item {
     position: relative;
     overflow: hidden;
+    height: 300px; /* Hauteur fixe */
 }
 
 .grid-item img {
     width: 100%;
-    height: 200px; /* Un peu plus haut */
+    height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.5s;
 }
+
 .grid-item:hover img {
-    transform: scale(1.05); /* Petit zoom au survol */
+    transform: scale(1.05);
 }
 
 .grid-caption {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 20px;
+    left: 20px;
     color: white;
-    font-family: 'Philosopher', sans-serif; /* Titre sur image en Philosopher */
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* --- SECTION 4 : CONNECT --- */
+/* --- 4. CONNECT / CONTACT (PC) --- */
 .connect-section {
     background-color: #111;
+    /* Active si tu as une image de carte sombre */
     /* background-image: url('img/map-dark.jpg'); */
-    color: white;
-    padding: 5rem 1.5rem;
     background-size: cover;
-    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+/* Sur PC, on met le texte à gauche et le formulaire à droite */
+.split-layout-reverse {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.col-contact-info {
+    width: 35%;
+}
+
+.col-contact-form {
+    width: 60%;
 }
 
 .connect-title {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-}
-
-.social-links {
-    margin-bottom: 3rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
 .social-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-.social-links a:hover {
-    opacity: 1;
+    font-size: 1.1rem;
+    margin-right: 15px;
 }
 
 /* Formulaire */
-.contact-form label {
-    display: block;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
 .form-row {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 .form-row .half {
     width: 50%;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+input, textarea {
     width: 100%;
     padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid transparent;
+    background: white;
+    border: none;
     font-family: 'Libre Franklin', sans-serif;
-    font-size: 1rem;
-    border-radius: 4px;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #D60057;
 }
 
 .btn-white {
-    background-color: white;
+    background: white;
     color: black;
+    padding: 15px 50px;
     border: none;
-    padding: 14px 45px;
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-}
-.btn-white:hover {
-    background-color: #D60057;
-    color: white;
+    margin-top: 10px;
 }
 
-/* --- FOOTER --- */
+/* FOOTER */
 footer {
-    background-color: black;
-    color: white;
-    padding: 4rem 2rem;
+    padding: 50px 0;
+    background: black;
+    border-top: 1px solid #333;
+}
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    border-top: 1px solid #222;
+    align-items: center;
 }
-
-.footer-logo img {
-    width: 100px; /* Taille bien visible pour le bas */
-    height: auto;
-    margin-bottom: 1rem; /* Un peu d'espace sous le logo */
-}
-
 .footer-links {
     display: flex;
-    gap: 3rem;
+    gap: 40px;
 }
-
-.footer-links .col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .footer-links a {
-    color: #aaa;
+    color: #777;
     text-decoration: none;
-    font-size: 0.85rem;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
-    transition: color 0.3s;
+    font-size: 0.8rem;
 }
-.footer-links a:hover {
-    color: white;
 
+
+/* ========================================= */
+/* === RESPONSIVE AUTOMATIQUE (MOBILE)  === */
+/* ========================================= */
+/* C'est ici qu'on dit : "Si l'écran est plus petit que 768px (Tablette/Mobile), change la disposition" */
+
+@media (max-width: 768px) {
+    
+    /* Navbar : On empile ou on cache le menu */
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .nav-links {
+        display: none; /* Cache le menu texte sur mobile (ou remplace par un burger plus tard) */
+    }
+
+    .main-title {
+        font-size: 2.5rem; /* Plus petit titre */
+    }
+
+    /* Welcome Section : On empile (Image en haut, texte en bas) */
+    .split-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .col-left, .col-right {
+        width: 100%; /* Prend toute la largeur */
+    }
+    
+    .welcome-text {
+        text-align: center; /* Centre le texte sur mobile */
+    }
+
+    /* Galerie : 1 seule colonne */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact : On empile */
+    .split-layout-reverse {
+        flex-direction: column;
+    }
+    
+    .col-contact-info, .col-contact-form {
+        width: 100%;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-row .half {
+        width: 100%;
+    }
 }
