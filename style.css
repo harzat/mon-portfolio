@@ -13,9 +13,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Conteneur principal pour centrer le contenu sur les très grands écrans (iMac etc.) */
+/* Conteneur principal */
 .container {
-    max-width: 1200px; /* Largeur standard PC */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -26,30 +26,38 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* --- SECTION 1 : HERO (Le Ciel Étoilé) --- */
+/* --- 1. HERO SECTION (CORRIGÉE) --- */
 .hero-section {
-    height: 100vh; /* Prend tout l'écran */
+    height: 100vh;
+    width: 100%;
     
-    /* 1. On garde une couleur de fond noire de sécurité (pendant que l'image charge) */
-    background-color: #000; 
-    
-    /* 2. ON AJOUTE TON IMAGE ICI */
-    /* Vérifie bien l'extension de ton fichier (.jpg ou .png ?) */
+    /* Fond noir de sécurité + Image */
+    background-color: #000;
     background-image: url('img/image-header-1.jpg');
     
-    /* 3. On s'assure qu'elle couvre tout l'écran sans se répéter */
-    background-size: cover; 
+    /* Gestion de l'image */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    /* --- CE QU'IL MANQUAIT DANS TON CODE : --- */
+    position: relative; /* Indispensable pour que le texte se place dessus */
+    display: flex;      /* Indispensable pour centrer le texte */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;       /* Texte en blanc */
+} /* <--- CETTE ACCOLADE MANQUAIT ! */
 
+/* BARRE DE NAVIGATION */
 .navbar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 50px; /* Espace large pour PC */
+    padding: 30px 50px;
     display: flex;
-    justify-content: space-between; /* Logo à gauche, Menu à droite */
+    justify-content: space-between;
     align-items: center;
     z-index: 10;
 }
@@ -61,7 +69,7 @@ h1, h2, h3 {
 
 .nav-links {
     display: flex;
-    gap: 30px; /* Espace entre les liens */
+    gap: 30px;
 }
 
 .nav-links a {
@@ -78,47 +86,47 @@ h1, h2, h3 {
     opacity: 0.7;
 }
 
-.main-title {
-    font-size: 4rem; /* Très gros sur PC */
-    letter-spacing: 5px;
+.hero-content {
+    z-index: 5;
     text-align: center;
+}
+
+.main-title {
+    font-size: 4rem;
+    letter-spacing: 5px;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .subtitle {
     font-family: 'Philosopher', sans-serif;
     font-style: italic;
     font-size: 1.2rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    color: white;
 }
 
-/* --- 2. SECTION WELCOME (Split Layout PC) --- */
+/* --- 2. WELCOME SECTION --- */
 .welcome-section {
     background-color: white;
-    padding: 100px 0; /* Beaucoup d'espace vertical */
+    padding: 100px 0;
 }
 
-/* Layout PC : Flexbox pour mettre côte à côte */
 .split-layout {
     display: flex;
-    align-items: center; /* Centré verticalement */
+    align-items: center;
     justify-content: space-between;
-    gap: 60px; /* Espace entre photo et texte */
+    gap: 60px;
 }
 
-.col-left {
-    width: 45%;
-}
-
-.col-right {
-    width: 50%;
-}
+.col-left { width: 45%; }
+.col-right { width: 50%; }
 
 .profile-img {
     width: 100%;
     height: auto;
     filter: grayscale(100%);
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05); /* Petit effet de style */
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
 }
 
 .welcome-text h2 {
@@ -145,11 +153,9 @@ h1, h2, h3 {
     margin-top: 20px;
     transition: background 0.3s;
 }
-.btn-pink:hover {
-    background-color: #b00048;
-}
+.btn-pink:hover { background-color: #b00048; }
 
-/* --- 3. GALERIE (3 Colonnes sur PC) --- */
+/* --- 3. GALERIE --- */
 .gallery-section {
     background-color: white;
     padding-bottom: 100px;
@@ -157,14 +163,14 @@ h1, h2, h3 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Colonnes égales */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .grid-item {
     position: relative;
     overflow: hidden;
-    height: 300px; /* Hauteur fixe */
+    height: 300px;
 }
 
 .grid-item img {
@@ -173,10 +179,7 @@ h1, h2, h3 {
     object-fit: cover;
     transition: transform 0.5s;
 }
-
-.grid-item:hover img {
-    transform: scale(1.05);
-}
+.grid-item:hover img { transform: scale(1.05); }
 
 .grid-caption {
     position: absolute;
@@ -188,35 +191,24 @@ h1, h2, h3 {
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* --- 4. CONNECT / CONTACT (PC) --- */
+/* --- 4. CONNECT --- */
 .connect-section {
     background-color: #111;
-    /* Active si tu as une image de carte sombre */
-    /* background-image: url('img/map-dark.jpg'); */
     background-size: cover;
     color: white;
     padding: 100px 0;
 }
 
-/* Sur PC, on met le texte à gauche et le formulaire à droite */
 .split-layout-reverse {
     display: flex;
     justify-content: space-between;
     gap: 50px;
 }
 
-.col-contact-info {
-    width: 35%;
-}
+.col-contact-info { width: 35%; }
+.col-contact-form { width: 60%; }
 
-.col-contact-form {
-    width: 60%;
-}
-
-.connect-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
+.connect-title { font-size: 3.5rem; margin-bottom: 20px; }
 
 .social-links a {
     color: white;
@@ -226,24 +218,10 @@ h1, h2, h3 {
 }
 
 /* Formulaire */
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-.form-row .half {
-    width: 50%;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
+.form-row { display: flex; gap: 20px; }
+.form-row .half { width: 50%; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 600; }
 
 input, textarea {
     width: 100%;
@@ -254,95 +232,26 @@ input, textarea {
 }
 
 .btn-white {
-    background: white;
-    color: black;
-    padding: 15px 50px;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-top: 10px;
+    background: white; color: black; padding: 15px 50px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px;
 }
 
 /* FOOTER */
-footer {
-    padding: 50px 0;
-    background: black;
-    border-top: 1px solid #333;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.footer-links {
-    display: flex;
-    gap: 40px;
-}
-.footer-links a {
-    color: #777;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
+footer { padding: 50px 0; background: black; border-top: 1px solid #333; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 40px; }
+.footer-links a { color: #777; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
 
-
-/* ========================================= */
-/* === RESPONSIVE AUTOMATIQUE (MOBILE)  === */
-/* ========================================= */
-/* C'est ici qu'on dit : "Si l'écran est plus petit que 768px (Tablette/Mobile), change la disposition" */
-
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
+    .navbar { flex-direction: column; padding: 20px; }
+    .nav-links { display: none; }
+    .main-title { font-size: 2.5rem; }
     
-    /* Navbar : On empile ou on cache le menu */
-    .navbar {
-        flex-direction: column;
-        padding: 20px;
-    }
+    .split-layout, .split-layout-reverse { flex-direction: column; gap: 30px; }
+    .col-left, .col-right, .col-contact-info, .col-contact-form { width: 100%; }
+    .welcome-text { text-align: center; }
     
-    .nav-links {
-        display: none; /* Cache le menu texte sur mobile (ou remplace par un burger plus tard) */
-    }
-
-    .main-title {
-        font-size: 2.5rem; /* Plus petit titre */
-    }
-
-    /* Welcome Section : On empile (Image en haut, texte en bas) */
-    .split-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .col-left, .col-right {
-        width: 100%; /* Prend toute la largeur */
-    }
-    
-    .welcome-text {
-        text-align: center; /* Centre le texte sur mobile */
-    }
-
-    /* Galerie : 1 seule colonne */
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Contact : On empile */
-    .split-layout-reverse {
-        flex-direction: column;
-    }
-    
-    .col-contact-info, .col-contact-form {
-        width: 100%;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    .form-row .half {
-        width: 100%;
-    }
+    .grid-container { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+    .form-row .half { width: 100%; }
 }
-
