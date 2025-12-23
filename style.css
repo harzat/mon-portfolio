@@ -31,23 +31,23 @@ h1, h2, h3 {
     height: 100vh;
     width: 100%;
     
-    /* Fond noir de sécurité + Image */
+    /* Image de fond */
     background-color: #000;
+    /* ASSURE-TOI QUE LE NOM DU FICHIER EST EXACT (Majuscules/Minuscules) */
     background-image: url('img/image-header-1.jpg');
     
-    /* Gestion de l'image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    /* --- CE QU'IL MANQUAIT DANS TON CODE : --- */
-    position: relative; /* Indispensable pour que le texte se place dessus */
-    display: flex;      /* Indispensable pour centrer le texte */
+    /* Centrage du contenu */
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;       /* Texte en blanc */
-} /* <--- CETTE ACCOLADE MANQUAIT ! */
+    color: white;
+}
 
 /* BARRE DE NAVIGATION */
 .navbar {
@@ -63,8 +63,9 @@ h1, h2, h3 {
 }
 
 .my-logo {
-    width: 80px;
+    width: 100px; /* Taille du logo du haut */
     height: auto;
+    display: block;
 }
 
 .nav-links {
@@ -89,6 +90,7 @@ h1, h2, h3 {
 .hero-content {
     z-index: 5;
     text-align: center;
+    margin-top: 50px; /* Petit ajustement pour ne pas être caché par le menu */
 }
 
 .main-title {
@@ -126,6 +128,7 @@ h1, h2, h3 {
     width: 100%;
     height: auto;
     filter: grayscale(100%);
+    border-radius: 4px; /* Légèrement arrondi */
     box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
 }
 
@@ -235,11 +238,50 @@ input, textarea {
     background: white; color: black; padding: 15px 50px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px;
 }
 
-/* FOOTER */
-footer { padding: 50px 0; background: black; border-top: 1px solid #333; }
-.footer-content { display: flex; justify-content: space-between; align-items: center; }
-.footer-links { display: flex; gap: 40px; }
-.footer-links a { color: #777; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
+/* --- FOOTER (CORRIGÉ) --- */
+footer {
+    padding: 50px 0;
+    background: black;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligne le logo et le texte verticalement */
+}
+
+/* C'EST ICI QU'ON CONTRÔLE LA TAILLE DU LOGO FOOTER */
+.footer-logo img {
+    width: 60px; /* Taille fixe petite */
+    height: auto;
+    opacity: 0.8; /* Légèrement transparent */
+    display: block;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
 
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
@@ -254,4 +296,6 @@ footer { padding: 50px 0; background: black; border-top: 1px solid #333; }
     .grid-container { grid-template-columns: 1fr; }
     .form-row { flex-direction: column; }
     .form-row .half { width: 100%; }
+    
+    .footer-content { flex-direction: column; gap: 30px; text-align: center; }
 }
