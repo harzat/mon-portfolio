@@ -20,18 +20,22 @@ h1, h2, h3, .footer-logo {
     font-weight: 700;
 }
 
-/* --- LOGO --- */
+/* --- LOGO HEADER --- */
 .logo-container {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10; /* Pour être sûr qu'il passe au dessus du fond */
+    top: 25px; /* Un peu plus d'espace en haut */
+    left: 25px;
+    z-index: 10;
 }
 
 .my-logo {
-    width: 60px; /* Ajuste la taille de ton logo ici */
-    height: auto;
+    /* AVANT: width: 60px; */
+    /* MAINTENANT : Beaucoup plus grand */
+    width: 150px; 
+    height: auto; /* Garde les proportions */
     display: block;
+    /* Optionnel : Ajoute une petite ombre pour le faire ressortir du fond étoilé */
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
 }
 
 /* --- SECTION 1 : HERO --- */
@@ -248,6 +252,12 @@ footer {
     border-top: 1px solid #222;
 }
 
+.footer-logo img {
+    width: 100px; /* Taille bien visible pour le bas */
+    height: auto;
+    margin-bottom: 1rem; /* Un peu d'espace sous le logo */
+}
+
 .footer-links {
     display: flex;
     gap: 3rem;
@@ -270,4 +280,5 @@ footer {
 }
 .footer-links a:hover {
     color: white;
+
 }
