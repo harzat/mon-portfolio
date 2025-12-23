@@ -109,8 +109,11 @@ h1, h2, h3 {
 
 /* --- 2. WELCOME SECTION --- */
 .welcome-section {
-    background-color: white;
-    padding: 100px 0;
+    /* CHANGEMENT 1 : Le fond gris clair chic */
+    background-color: #f4f4f4; 
+    
+    /* CHANGEMENT 2 : Plus de hauteur (110px en haut et en bas) */
+    padding: 110px 0; 
 }
 
 .split-layout {
@@ -126,21 +129,23 @@ h1, h2, h3 {
 .profile-img {
     width: 100%;
     height: auto;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%);  Pour que profil soit en blanc noir*/ 
     border-radius: 4px;
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
+    /* Petit ajustement : l'ombre ressort mieux sur du gris */
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.1); 
 }
 
 .welcome-text h2 {
     font-size: 3rem;
     margin-bottom: 30px;
     letter-spacing: 2px;
+    color: #000; /* Titre bien noir */
 }
 
 .welcome-text p {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #555;
+    color: #444; /* Texte gris foncé pour la lisibilité */
 }
 
 .btn-pink {
@@ -156,7 +161,6 @@ h1, h2, h3 {
     transition: background 0.3s;
 }
 .btn-pink:hover { background-color: #b00048; }
-
 /* --- 3. GALERIE --- */
 .gallery-section {
     background-color: white;
@@ -287,3 +291,4 @@ footer .footer-logo img {
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
     .footer-content .footer-logo img { margin: 0 auto; } /* Centre le logo sur mobile */
 }
+
