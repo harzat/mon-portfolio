@@ -34,7 +34,7 @@ h1, h2, h3 {
     /* Image de fond */
     background-color: #000;
     /* ASSURE-TOI QUE LE NOM DU FICHIER EST EXACT (Majuscules/Minuscules) */
-    background-image: url('img/image-header-1.jpg');
+    background-image: url('img/image-header-1.png');
     
     background-size: cover;
     background-position: center;
@@ -299,3 +299,4 @@ footer {
     
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
 }
+
