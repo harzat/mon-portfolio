@@ -5,13 +5,12 @@
     box-sizing: border-box;
 }
 
-/* DÉFINITION DES COULEURS DE TON LOGO */
+/* --- CHARTE GRAPHIQUE ZAB ADVISOR --- */
 :root {
-    --zab-red: #CE2029;       /* Le Rouge de "Zab" */
-    --zab-red-dark: #a31621;  /* Une version plus sombre pour le survol */
-    --zab-blue: #182B49;      /* Le Bleu Marine de "advisor" */
-    --text-grey: #444;        /* Pour le texte courant */
-    --bg-grey: #f4f4f4;       /* Pour la section Welcome */
+    --zab-red: #CE2029;       /* Le Rouge Vif du logo */
+    --zab-blue: #182B49;      /* Le Bleu Marine du logo */
+    --text-grey: #444;        /* Gris pour le texte de lecture */
+    --bg-light: #f4f4f4;      /* Gris très clair pour les fonds */
 }
 
 body {
@@ -33,7 +32,7 @@ body {
 h1, h2, h3 {
     font-family: 'Philosopher', sans-serif;
     font-weight: 700;
-    color: var(--zab-blue); /* Les titres prennent la couleur Bleu Marine */
+    color: var(--zab-blue); /* Les titres en Bleu Marine */
 }
 
 /* --- 1. HERO SECTION --- */
@@ -41,10 +40,10 @@ h1, h2, h3 {
     height: 100vh;
     width: 100%;
     
-    /* Fond de sécurité : Bleu Marine du logo au lieu de noir pur */
+    /* FOND BLEU MARINE (Couleur du logo) */
     background-color: var(--zab-blue);
     
-    /* Image de fond (Ton ciel étoilé) */
+    /* Image de fond (Ciel étoilé) */
     background-image: url('img/image-header-1.png');
     
     background-size: cover;
@@ -94,7 +93,7 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-    color: var(--zab-red); /* Survol du menu en Rouge Zab */
+    color: var(--zab-red); /* Survol en ROUGE */
 }
 
 .hero-content {
@@ -107,7 +106,7 @@ h1, h2, h3 {
     font-size: 4rem;
     letter-spacing: 5px;
     margin-bottom: 1rem;
-    color: white; /* Reste blanc pour contraster avec le ciel */
+    color: white; /* Blanc sur fond bleu */
 }
 
 .subtitle {
@@ -120,7 +119,7 @@ h1, h2, h3 {
 
 /* --- 2. WELCOME SECTION --- */
 .welcome-section {
-    background-color: var(--bg-grey); /* Gris clair premium */
+    background-color: var(--bg-light); /* Gris clair chic */
     padding: 160px 0;
 }
 
@@ -137,16 +136,16 @@ h1, h2, h3 {
 .profile-img {
     width: 100%;
     height: auto;
-    /* Pas de filtre N&B, couleurs naturelles */
+    /* Plus de noir et blanc, couleurs naturelles */
     border-radius: 4px;
-    box-shadow: 20px 20px 0px rgba(24, 43, 73, 0.1); /* Ombre bleutée subtile */
+    box-shadow: 20px 20px 0px rgba(24, 43, 73, 0.1); /* Ombre bleutée légère */
 }
 
 .welcome-text h2 {
     font-size: 3rem;
     margin-bottom: 30px;
     letter-spacing: 2px;
-    color: var(--zab-blue); /* Titre en Bleu Marine */
+    color: var(--zab-blue); /* Titre Bleu Marine */
 }
 
 .welcome-text p {
@@ -155,10 +154,10 @@ h1, h2, h3 {
     color: var(--text-grey);
 }
 
-/* BOUTON AVEC LA COULEUR DU LOGO */
+/* LE BOUTON DEVIENT ROUGE (Couleur Zab) */
 .btn-pink {
     display: inline-block;
-    background-color: var(--zab-red); /* ROUGE DU LOGO */
+    background-color: var(--zab-red); 
     color: white;
     padding: 15px 40px;
     border-radius: 50px;
@@ -169,7 +168,7 @@ h1, h2, h3 {
     transition: background 0.3s, transform 0.2s;
 }
 .btn-pink:hover { 
-    background-color: var(--zab-red-dark); /* Rouge plus foncé au survol */
+    background-color: #a31621; /* Rouge plus foncé au survol */
     transform: translateY(-2px);
 }
 
@@ -190,7 +189,7 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden;
     height: 300px;
-    background-color: #eee; /* Couleur de fond par défaut */
+    background-color: #eee;
 }
 
 .grid-item img {
@@ -212,9 +211,9 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
-/* --- 4. CONNECT --- */
+/* --- 4. CONNECT (Fond Bleu Marine) --- */
 .connect-section {
-    background-color: var(--zab-blue); /* Fond Bleu Marine (au lieu de noir) */
+    background-color: var(--zab-blue); 
     color: white;
     padding: 100px 0;
 }
@@ -222,7 +221,7 @@ h1, h2, h3 {
 .connect-title { 
     font-size: 3.5rem; 
     margin-bottom: 20px;
-    color: white; /* Blanc sur fond bleu */
+    color: white;
 }
 
 .split-layout-reverse {
@@ -258,8 +257,9 @@ input, textarea {
     border-radius: 2px;
     font-family: 'Libre Franklin', sans-serif;
 }
+/* Focus en rouge quand on clique */
 input:focus, textarea:focus {
-    outline: 2px solid var(--zab-red); /* Focus en rouge */
+    outline: 2px solid var(--zab-red);
 }
 
 .btn-white {
@@ -275,14 +275,14 @@ input:focus, textarea:focus {
     transition: all 0.3s;
 }
 .btn-white:hover {
-    background-color: var(--zab-red); /* Devient rouge au survol */
+    background-color: var(--zab-red); /* Rouge au survol */
     color: white;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER (Bleu très sombre) --- */
 footer {
     padding: 50px 0;
-    background: #0d1b33; /* Un bleu très très sombre (presque noir) pour le footer */
+    background: #0e1a2b; /* Presque noir, mais teinte bleue */
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -292,6 +292,7 @@ footer {
     align-items: flex-start;
 }
 
+/* Force la taille du logo footer */
 footer .footer-logo img {
     width: 80px !important;
     height: auto !important;
@@ -315,7 +316,6 @@ footer .footer-logo img {
 .footer-links a:hover {
     color: var(--zab-red); /* Rouge au survol */
 }
-
 
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
