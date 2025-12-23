@@ -3,103 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Bakary Diarrassouba</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Franklin:ital,wght@0,300;0,400;1,300&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="hero-section">
-        <div class="logo-container">
-            <img src="img/logo.png" alt="Zab Advisor" class="my-logo">
-        </div>
+        
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="BD Logo" class="my-logo">
+            </div>
+            
+            <div class="nav-links">
+                <a href="#">Story</a>
+                <a href="#">Work</a>
+                <a href="#">Journal</a>
+                <a href="#">Consulting</a>
+                <a href="#contact">Connect</a>
+            </div>
+        </nav>
         
         <div class="hero-content">
             <h1 class="main-title">Bakary Diarrassouba</h1>
-            <p class="subtitle">The Souba Experience</p>
+            <p class="subtitle">The Vulnerable Creative</p>
         </div>
     </header>
 
     <section class="welcome-section">
-        <div class="profile-image-container">
-            <img src="img/Mypicture-1.jpg" alt="Portrait Bakary" class="profile-img">
-        </div>
-        
-        <div class="welcome-text">
-            <h2>Welcome</h2>
-            <p>
-                Our bodies, minds and communities are vehicles of change. I believe in the power of connection and storytelling to transform lives.
-            </p>
-            <a href="#contact" class="btn-pink">Explore</a>
+        <div class="container split-layout">
+            <div class="col-left">
+                <div class="profile-image-container">
+                    <img src="img/Mypicture-1.jpg" alt="Portrait" class="profile-img">
+                </div>
+            </div>
+            
+            <div class="col-right">
+                <div class="welcome-text">
+                    <h2>Welcome</h2>
+                    <p>
+                        Our bodies, minds and communities are vehicles of change. I believe in the power of connection and storytelling to transform lives.
+                    </p>
+                    <p>
+                        Through my work, I aim to create spaces where vulnerability is strength.
+                    </p>
+                    <a href="#contact" class="btn-pink">Explore</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="gallery-section">
-        <div class="grid-container">
-            <div class="grid-item">
-                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center;">Image 1</div>
-                <span class="grid-caption">Podcast</span>
-            </div>
-            <div class="grid-item">
-                <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center;">Image 2</div>
-                <span class="grid-caption">beSouba</span>
+        <div class="container">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div style="background:#333; height:100%; display:flex; align-items:center; justify-content:center; color:white;">IMAGE 1</div>
+                    <span class="grid-caption">Podcast</span>
+                </div>
+                <div class="grid-item">
+                    <div style="background:#D60057; height:100%; display:flex; align-items:center; justify-content:center; color:white;">IMAGE 2</div>
+                    <span class="grid-caption">beSouba</span>
+                </div>
+                <div class="grid-item">
+                    <div style="background:#444; height:100%; display:flex; align-items:center; justify-content:center; color:white;">IMAGE 3</div>
+                    <span class="grid-caption">Africa</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="connect-section" id="contact">
-        <h2 class="connect-title">Connect</h2>
-        
-        <div class="social-links">
-            <a href="#">LinkedIn</a> <a href="#">Insta</a> <a href="#">X</a>
-        </div>
+        <div class="container split-layout-reverse">
+            <div class="col-contact-info">
+                <h2 class="connect-title">Connect</h2>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a> / <a href="#">Insta</a> / <a href="#">X</a>
+                </div>
+                <p style="margin-top:20px; color:#aaa; font-size: 0.9rem;">
+                    New York, NY<br>Available for travel
+                </p>
+            </div>
 
-        <form class="contact-form">
-            <div class="form-row">
-                <div class="form-group half">
-                    <label>Name</label>
-                    <input type="text">
-                </div>
-                <div class="form-group half">
-                    <label>Last Name</label>
-                    <input type="text">
-                </div>
+            <div class="col-contact-form">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group half">
+                            <label>Surname</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-white">Send</button>
+                </form>
             </div>
-            
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email">
-            </div>
-            
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="4"></textarea>
-            </div>
-            
-            <button type="submit" class="btn-white">Send</button>
-        </form>
+        </div>
     </section>
 
     <footer>
-        <div class="footer-logo">
-            <img src="img/logo.png" alt="Logo">
-        </div>
-        <div class="footer-links">
-            <div class="col">
-                <a href="#">About</a>
-                <a href="#">Story</a>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logo">
             </div>
-            <div class="col">
-                <a href="#">Contact</a>
-                <a href="#">Subscribe</a>
+            <div class="footer-links">
+                <div class="col">
+                    <a href="#">About</a>
+                    <a href="#">Story</a>
+                </div>
+                <div class="col">
+                    <a href="#">Contact</a>
+                    <a href="#">Subscribe</a>
+                </div>
             </div>
         </div>
     </footer>
 
 </body>
 </html>
-
