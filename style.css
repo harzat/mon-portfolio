@@ -1,0 +1,273 @@
+/* RESET ET BASES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Police principale du texte (identique au site Bakary) */
+    font-family: 'Libre Franklin', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+/* POLICE DES TITRES */
+h1, h2, h3, .footer-logo {
+    /* Police des titres (identique au site Bakary) */
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+}
+
+/* --- LOGO --- */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10; /* Pour être sûr qu'il passe au dessus du fond */
+}
+
+.my-logo {
+    width: 60px; /* Ajuste la taille de ton logo ici */
+    height: auto;
+    display: block;
+}
+
+/* --- SECTION 1 : HERO --- */
+.hero-section {
+    height: 90vh;
+    background-color: #000;
+    /* background-image: url('img/stars.jpg'); */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.main-title {
+    font-size: 2.8rem; /* Un peu plus grand pour Philosopher */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif; /* Police secondaire pour les sous-titres */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* --- SECTION 2 : WELCOME --- */
+.welcome-section {
+    padding: 4rem 1.5rem;
+    background-color: #f4f4f4;
+}
+
+.profile-image-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem auto;
+    filter: grayscale(100%);
+}
+
+.welcome-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+    /* Libre Franklin est très lisible, on peut le garder simple */
+}
+
+.btn-pink {
+    display: inline-block;
+    background-color: #D60057;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+.btn-pink:hover {
+    background-color: #b00048;
+}
+
+/* --- SECTION 3 : GALERIE --- */
+.gallery-section {
+    padding: 10px;
+    background: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px; /* Un peu plus haut */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.grid-item:hover img {
+    transform: scale(1.05); /* Petit zoom au survol */
+}
+
+.grid-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-family: 'Philosopher', sans-serif; /* Titre sur image en Philosopher */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* --- SECTION 4 : CONNECT --- */
+.connect-section {
+    background-color: #111;
+    /* background-image: url('img/map-dark.jpg'); */
+    color: white;
+    padding: 5rem 1.5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.connect-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.social-links a:hover {
+    opacity: 1;
+}
+
+/* Formulaire */
+.contact-form label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+.form-row .half {
+    width: 50%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #D60057;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 14px 45px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+.btn-white:hover {
+    background-color: #D60057;
+    color: white;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: black;
+    color: white;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #222;
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-links .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: white;
+}
