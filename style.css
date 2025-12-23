@@ -112,8 +112,8 @@ h1, h2, h3 {
 .subtitle {
     font-family: 'Philosopher', sans-serif;
     font-style: italic;
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 2rem;
+    opacity: 1;
     color: white;
 }
 
@@ -334,4 +334,5 @@ footer .footer-logo img {
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
     .footer-content .footer-logo img { margin: 0 auto; }
 }
+
 
