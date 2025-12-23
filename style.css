@@ -120,7 +120,7 @@ h1, h2, h3 {
 /* --- 2. WELCOME SECTION --- */
 .welcome-section {
     background-color: var(--bg-light); /* Gris clair chic */
-    padding: 160px 0;
+    padding: 130px 0;
 }
 
 .split-layout {
@@ -334,3 +334,4 @@ footer .footer-logo img {
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
     .footer-content .footer-logo img { margin: 0 auto; }
 }
+
