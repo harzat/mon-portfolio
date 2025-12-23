@@ -26,21 +26,21 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* --- 1. HEADER & NAVIGATION (VERSION PC) --- */
+/* --- SECTION 1 : HERO (Le Ciel Étoilé) --- */
 .hero-section {
-    height: 100vh;
-    background-color: #000;
-    /* Active cette ligne quand tu auras mis l'image stars.jpg */
-    /* background-image: url('img/stars.jpg'); */
-    background-size: cover;
+    height: 100vh; /* Prend tout l'écran */
+    
+    /* 1. On garde une couleur de fond noire de sécurité (pendant que l'image charge) */
+    background-color: #000; 
+    
+    /* 2. ON AJOUTE TON IMAGE ICI */
+    /* Vérifie bien l'extension de ton fichier (.jpg ou .png ?) */
+    background-image: url('img/image-header-1.jpg');
+    
+    /* 3. On s'assure qu'elle couvre tout l'écran sans se répéter */
+    background-size: cover; 
     background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+    background-repeat: no-repeat;
 
 .navbar {
     position: absolute;
@@ -345,3 +345,4 @@ footer {
         width: 100%;
     }
 }
+
