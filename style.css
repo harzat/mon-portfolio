@@ -5,9 +5,18 @@
     box-sizing: border-box;
 }
 
+/* DÉFINITION DES COULEURS DE TON LOGO */
+:root {
+    --zab-red: #CE2029;       /* Le Rouge de "Zab" */
+    --zab-red-dark: #a31621;  /* Une version plus sombre pour le survol */
+    --zab-blue: #182B49;      /* Le Bleu Marine de "advisor" */
+    --text-grey: #444;        /* Pour le texte courant */
+    --bg-grey: #f4f4f4;       /* Pour la section Welcome */
+}
+
 body {
     font-family: 'Libre Franklin', sans-serif;
-    color: #333;
+    color: var(--text-grey);
     line-height: 1.6;
     background-color: #000;
     -webkit-font-smoothing: antialiased;
@@ -24,24 +33,24 @@ body {
 h1, h2, h3 {
     font-family: 'Philosopher', sans-serif;
     font-weight: 700;
+    color: var(--zab-blue); /* Les titres prennent la couleur Bleu Marine */
 }
 
-/* --- 1. HERO SECTION (CORRECTION PNG) --- */
+/* --- 1. HERO SECTION --- */
 .hero-section {
     height: 100vh;
     width: 100%;
     
-    /* Fond de sécurité */
-    background-color: #000;
+    /* Fond de sécurité : Bleu Marine du logo au lieu de noir pur */
+    background-color: var(--zab-blue);
     
-    /* ICI : Correction de l'extension en .png */
+    /* Image de fond (Ton ciel étoilé) */
     background-image: url('img/image-header-1.png');
     
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    /* Centrage */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -64,7 +73,7 @@ h1, h2, h3 {
 }
 
 .my-logo {
-    width: 100px; /* Taille logo haut */
+    width: 100px;
     height: auto;
     display: block;
 }
@@ -81,10 +90,12 @@ h1, h2, h3 {
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover { opacity: 0.7; }
+.nav-links a:hover {
+    color: var(--zab-red); /* Survol du menu en Rouge Zab */
+}
 
 .hero-content {
     z-index: 5;
@@ -96,7 +107,7 @@ h1, h2, h3 {
     font-size: 4rem;
     letter-spacing: 5px;
     margin-bottom: 1rem;
-    color: white;
+    color: white; /* Reste blanc pour contraster avec le ciel */
 }
 
 .subtitle {
@@ -109,11 +120,8 @@ h1, h2, h3 {
 
 /* --- 2. WELCOME SECTION --- */
 .welcome-section {
-    /* CHANGEMENT 1 : Le fond gris clair chic */
-    background-color: #f4f4f4; 
-    
-    /* CHANGEMENT 2 : Plus de hauteur (110px en haut et en bas) */
-    padding: 110px 0; 
+    background-color: var(--bg-grey); /* Gris clair premium */
+    padding: 160px 0;
 }
 
 .split-layout {
@@ -129,28 +137,28 @@ h1, h2, h3 {
 .profile-img {
     width: 100%;
     height: auto;
-    /* filter: grayscale(100%);  Pour que profil soit en blanc noir*/ 
+    /* Pas de filtre N&B, couleurs naturelles */
     border-radius: 4px;
-    /* Petit ajustement : l'ombre ressort mieux sur du gris */
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.1); 
+    box-shadow: 20px 20px 0px rgba(24, 43, 73, 0.1); /* Ombre bleutée subtile */
 }
 
 .welcome-text h2 {
     font-size: 3rem;
     margin-bottom: 30px;
     letter-spacing: 2px;
-    color: #000; /* Titre bien noir */
+    color: var(--zab-blue); /* Titre en Bleu Marine */
 }
 
 .welcome-text p {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #444; /* Texte gris foncé pour la lisibilité */
+    color: var(--text-grey);
 }
 
+/* BOUTON AVEC LA COULEUR DU LOGO */
 .btn-pink {
     display: inline-block;
-    background-color: #D60057;
+    background-color: var(--zab-red); /* ROUGE DU LOGO */
     color: white;
     padding: 15px 40px;
     border-radius: 50px;
@@ -158,13 +166,18 @@ h1, h2, h3 {
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 20px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
-.btn-pink:hover { background-color: #b00048; }
+.btn-pink:hover { 
+    background-color: var(--zab-red-dark); /* Rouge plus foncé au survol */
+    transform: translateY(-2px);
+}
+
 /* --- 3. GALERIE --- */
 .gallery-section {
     background-color: white;
     padding-bottom: 100px;
+    padding-top: 50px;
 }
 
 .grid-container {
@@ -177,6 +190,7 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden;
     height: 300px;
+    background-color: #eee; /* Couleur de fond par défaut */
 }
 
 .grid-item img {
@@ -195,14 +209,20 @@ h1, h2, h3 {
     font-family: 'Philosopher', sans-serif;
     font-size: 1.5rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    pointer-events: none;
 }
 
 /* --- 4. CONNECT --- */
 .connect-section {
-    background-color: #111;
-    background-size: cover;
+    background-color: var(--zab-blue); /* Fond Bleu Marine (au lieu de noir) */
     color: white;
     padding: 100px 0;
+}
+
+.connect-title { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px;
+    color: white; /* Blanc sur fond bleu */
 }
 
 .split-layout-reverse {
@@ -214,14 +234,15 @@ h1, h2, h3 {
 .col-contact-info { width: 35%; }
 .col-contact-form { width: 60%; }
 
-.connect-title { font-size: 3.5rem; margin-bottom: 20px; }
-
 .social-links a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
     margin-right: 15px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
+.social-links a:hover { opacity: 1; }
 
 /* Formulaire */
 .form-row { display: flex; gap: 20px; }
@@ -234,33 +255,48 @@ input, textarea {
     padding: 15px;
     background: white;
     border: none;
+    border-radius: 2px;
     font-family: 'Libre Franklin', sans-serif;
+}
+input:focus, textarea:focus {
+    outline: 2px solid var(--zab-red); /* Focus en rouge */
 }
 
 .btn-white {
-    background: white; color: black; padding: 15px 50px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px;
+    background: white;
+    color: var(--zab-blue); /* Texte bleu */
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+.btn-white:hover {
+    background-color: var(--zab-red); /* Devient rouge au survol */
+    color: white;
 }
 
-/* --- FOOTER (CORRECTION FORCEE) --- */
+/* --- FOOTER --- */
 footer {
     padding: 50px 0;
-    background: black;
-    border-top: 1px solid #222;
+    background: #0d1b33; /* Un bleu très très sombre (presque noir) pour le footer */
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligne en haut */
+    align-items: flex-start;
 }
 
-/* CIBLE TRES PRECISE POUR FORCER LA TAILLE */
 footer .footer-logo img {
-    width: 80px !important; /* Force la taille à 80px */
+    width: 80px !important;
     height: auto !important;
-    max-width: 100px;
     display: block;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .footer-links {
@@ -269,9 +305,16 @@ footer .footer-logo img {
 }
 .footer-links .col { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a {
-    color: #888; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;
+    color: #aaa; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-size: 0.8rem; 
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
-.footer-links a:hover { color: white; }
+.footer-links a:hover {
+    color: var(--zab-red); /* Rouge au survol */
+}
 
 
 /* --- RESPONSIVE MOBILE --- */
@@ -289,6 +332,5 @@ footer .footer-logo img {
     .form-row .half { width: 100%; }
     
     .footer-content { flex-direction: column; gap: 30px; text-align: center; }
-    .footer-content .footer-logo img { margin: 0 auto; } /* Centre le logo sur mobile */
+    .footer-content .footer-logo img { margin: 0 auto; }
 }
-
